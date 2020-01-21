@@ -4,9 +4,9 @@ if [ -z $CURRENT ]; then
 fi
 
 
-docker build --no-cache=true -t splunk/universalforwarder:7.3.0 $CURRENT
-docker tag splunk/universalforwarder:7.3.0 splunk/universalforwarder:latest
-docker tag splunk/universalforwarder:7.3.0 registry.splunk.com/splunk/universalforwarder:7.3.0
-docker tag splunk/universalforwarder:7.3.0 registry.splunk.com/splunk/universalforwarder:latest
+docker build --no-cache=true -t cribl/universalforwarder:8.0.0 $CURRENT
+docker tag cribl/universalforwarder:8.0.0 cribl/universalforwarder:latest
+docker tag cribl/universalforwarder:8.0.0 registry.splunk.com/cribl/universalforwarder:8.0.0
+docker tag cribl/universalforwarder:8.0.0 registry.splunk.com/cribl/universalforwarder:latest
 
 

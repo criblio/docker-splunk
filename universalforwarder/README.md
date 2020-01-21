@@ -1,6 +1,6 @@
 # Supported tags
 
-* `7.3.0`, `latest` - Splunk universal forwarder base image [Dockerfile](https://github.com/splunk/docker-splunk/blob/master/enterprise/Dockerfile)
+* `8.0.0`, `latest` - Splunk universal forwarder base image [Dockerfile](https://github.com/splunk/docker-splunk/blob/master/enterprise/Dockerfile)
 * `6.5.3-monitor` - Splunk universal forwarder with Docker Monitoring [Dockerfile](https://github.com/splunk/docker-itmonitoring/blob/master/universalforwarder/Dockerfile)
 
 # What is the Splunk Universal Forwarder?
@@ -18,11 +18,11 @@ If you have not used Docker before, see the [Getting started tutorial](https://d
 0. (Optional) Sign up for a Docker ID at [Docker Hub](https://hub.docker.com).
 0. Download and install Docker on your system.
 0. Open a shell prompt or Terminal window.
-0. Enter the following command to pull the Splunk Enterprise version 7.3.0 image.<br>
+0. Enter the following command to pull the Splunk Enterprise version 8.0.0 image.<br>
 
    
    ```bash
-   docker pull splunk/universalforwarder:latest
+   docker pull cribl/universalforwarder:latest
    ```
 0. Run the Docker image.
    
@@ -36,7 +36,7 @@ If you have not used Docker before, see the [Getting started tutorial](https://d
        --volume /var/run/docker.sock:/var/run/docker.sock:ro \
        --volume volume_splunkuf_etc:/opt/splunk/etc \
        --volume volume_splunkuf_var:/opt/splunk/var \
-       -d splunk/universalforwarder:6.5.3-monitor
+       -d cribl/universalforwarder:6.5.3-monitor
    ```
 
 See [How to use the universal forwarder Docker image](#how-to-use-the-universal-forwarder-docker-image) for additional example commands.
@@ -49,24 +49,24 @@ The universal forwarder docker image can collect data from a host and send data 
 The following commands are examples of how to pull and run the universal forwarder Docker image. They can be run from a shell prompt or Docker QuickStart Terminal (on Mac OS X).
 
 ### Pull an image from this repository for the universal fowarder with the Docker data collection inputs
-The `7.3.0-monitor` tag ensures that the universal forwarder has the data inputs you need to get stats from a Docker container.
+The `8.0.0-monitor` tag ensures that the universal forwarder has the data inputs you need to get stats from a Docker container.
 
 ```bash
-docker pull splunk/universalforwarder:7.3.0-monitor
+docker pull cribl/universalforwarder:8.0.0-monitor
 ```
 
 ### Pull the latest version of the image from this repository
-The `7.3.0` and `latest` versions only have the forwarder and do not have any of the data inputs.
+The `8.0.0` and `latest` versions only have the forwarder and do not have any of the data inputs.
 =======
 The `6.5.3-monitor` tag ensures that the universal forwarder has the data inputs you need to get stats from a Docker container.
 
 ```bash
-docker pull splunk/universalforwarder:6.5.3-monitor
+docker pull cribl/universalforwarder:6.5.3-monitor
 ```
 
 
 ```bash
-docker pull splunk/universalforwarder:latest
+docker pull cribl/universalforwarder:latest
 ```
 
 ### Start a universal forwarder container and automatically accept the license agreement
@@ -112,7 +112,7 @@ services:
   splunkuniversalforwarder:
 
     hostname: splunkuniversalforwarder
-    image: splunk/universalforwarder:7.3.0
+    image: cribl/universalforwarder:8.0.0
     environment: SPLUNK_START_ARGS: --accept-license
     volumes:
       - opt-splunk-etc:/opt/splunk/etc
@@ -135,10 +135,10 @@ services:
 
 The `splunk/universalforwarder` image comes in the following variants:
 
-`splunk/universalforwarder:7.3.0` and `splunk/universalforwarder:latest`
+`cribl/universalforwarder:8.0.0` and `cribl/universalforwarder:latest`
 This is the default universal forwarder image.
 
-`splunk/universalforwarder:6.5.3-monitor`
+`cribl/universalforwarder:6.5.3-monitor`
 This image comes with some data inputs activated.
 
 ### Data Store
