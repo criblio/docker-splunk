@@ -1,6 +1,6 @@
 # Supported tags
 
-* `8.0.0`,`latest`- Splunk Enterprise base image [Dockerfile](https://github.com/splunk/docker-splunk/blob/master/enterprise/Dockerfile)
+* `8.0.5`,`latest`- Splunk Enterprise base image [Dockerfile](https://github.com/splunk/docker-splunk/blob/master/enterprise/Dockerfile)
 * `6.5.3-monitor` - Splunk Enterprise with Docker Monitoring [Dockerfile](https://github.com/splunk/docker-itmonitoring/blob/master/enterprise/Dockerfile)
 
 # What is Splunk Enterprise?
@@ -16,7 +16,7 @@ If you have not used Docker before, see the [Getting started tutorial](https://d
 0. (Optional) Sign up for a Docker ID at [Docker Hub](https://hub.docker.com).
 0. Download and install Docker on your system.
 0. Open a shell prompt or Terminal window.
-0. Enter the following command to pull the Splunk Enterprise version 8.0.0 image.<br>
+0. Enter the following command to pull the Splunk Enterprise version 8.0.5 image.<br>
    
    ```bash
    docker pull splunk/splunk
@@ -36,10 +36,10 @@ See [How to use the Splunk Enterprise Docker image](#How-to-use-the-Splunk-Enter
 The following commands can be run from a shell prompt or Docker QuickStart Terminal (on Mac OS X).
 
 
-### Pull an image for version 8.0.0 of Splunk Enterprise from this repository
+### Pull an image for version 8.0.5 of Splunk Enterprise from this repository
 
 ```bash
-docker pull cribl/splunk:8.0.0
+docker pull cribl/splunk:8.0.5
 ```
 
 ### Pull an image that uses the latest version of Splunk Enterprise from this repository
@@ -53,13 +53,13 @@ docker pull cribl/splunk:latest
 This command starts a Splunk Enterprise instance from the Docker container in this repository, accepts the license agreement, and opens TCP port 8000 so that you can access the Splunk instance from your local machine.
 
 ```bash
-docker run --name splunk --hostname splunk -p 8000:8000 -d -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" cribl/splunk:8.0.0
+docker run --name splunk --hostname splunk -p 8000:8000 -d -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" cribl/splunk:8.0.5
 ```
 ### Start a Splunk Enterprise container and mount the necessary container volumes
 
 ```bash
 docker run --name vsplunk -v /opt/splunk/etc -v /opt/splunk/var busybox
-docker run --hostname splunk --name splunk --volumes-from=vsplunk -p 8000:8000 -d -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" cribl/splunk:8.0.0
+docker run --hostname splunk --name splunk --volumes-from=vsplunk -p 8000:8000 -d -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" cribl/splunk:8.0.5
 ```
 
 > Note:
@@ -71,7 +71,7 @@ docker run --hostname splunk --name splunk --volumes-from=vsplunk -p 8000:8000 -
 ### Start a Splunk Enterprise container and mount volumes from host
 
 ```bash
-docker run --name splunk --hostname splunk -p 8000:8000  -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" -v /opt/splunk/etc:/opt/splunk/etc -v /opt/splunk/var:/opt/splunk/var  cribl/splunk:8.0.0
+docker run --name splunk --hostname splunk -p 8000:8000  -e "SPLUNK_START_ARGS=--accept-license --gen-and-print-passwd" -v /opt/splunk/etc:/opt/splunk/etc -v /opt/splunk/var:/opt/splunk/var  cribl/splunk:8.0.5
 ```
 
 ### Use entrypoint.sh to execute Splunk commands
@@ -103,7 +103,7 @@ services:
   splunkenterprise:
 
     hostname: splunkenterprise
-    image: cribl/splunk:8.0.0
+    image: cribl/splunk:8.0.5
     environment:
       SPLUNK_START_ARGS: --accept-license --gen-and-print-passwd
       SPLUNK_ENABLE_LISTEN: 9997
@@ -130,7 +130,7 @@ services:
 
 The `splunk/splunk` image comes in several variants:
 
-`cribl/splunk:8.0.0`
+`cribl/splunk:8.0.5`
 This is the default Splunk Enterprise image.
 
 `cribl/splunk:6.5.3-monitor`
